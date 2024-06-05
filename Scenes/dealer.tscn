@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c863hboj2issh"]
+
+[ext_resource type="Script" path="res://Scripts/dealer.gd" id="1_kgkfv"]
+[ext_resource type="FontFile" uid="uid://c72c1a465br4p" path="res://Assets/MotleyForcesRegular-w1rZ3.ttf" id="2_5rgiq"]
+[ext_resource type="Script" path="res://Scripts/Time based functions/TimeControl.gd" id="3_mq5d7"]
+
+[node name="Dealer" type="Node2D" node_paths=PackedStringArray("time_controller")]
+script = ExtResource("1_kgkfv")
+time_controller = NodePath("TimeControl")
+
+[node name="Score" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -104.0
+offset_right = 24.0
+offset_bottom = -81.0
+theme_override_fonts/font = ExtResource("2_5rgiq")
+theme_override_font_sizes/font_size = 36
+
+[node name="TimeControl" type="Node" parent="."]
+script = ExtResource("3_mq5d7")

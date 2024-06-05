@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl8akgg2ebogc"]
+
+[ext_resource type="Script" path="res://Scripts/Signal dataholder/SignalDataholder.gd" id="1_ry18m"]
+
+[node name="SignalDataHolder" type="Node"]
+script = ExtResource("1_ry18m")

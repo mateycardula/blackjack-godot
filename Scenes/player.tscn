@@ -1,13 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvt837shbq8tf"]
+[gd_scene load_steps=2 format=3 uid="uid://vrrpmxebif0s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_1o6cs"]
 
-[node name="Player" type="Node2D" node_paths=PackedStringArray("card_positions")]
+[node name="Player" type="Node2D"]
 script = ExtResource("1_1o6cs")
-card_positions = [NodePath("Card 1 Position"), NodePath("Card 2 Position")]
-
-[node name="Card 1 Position" type="Marker2D" parent="."]
-position = Vector2(-60, -1)
-
-[node name="Card 2 Position" type="Marker2D" parent="."]
-position = Vector2(60, -1)

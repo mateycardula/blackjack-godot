@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ub502e2q44kf"]
+
+[ext_resource type="Script" path="res://Scripts/Signal listener/SignalListener.gd" id="1_r5exb"]
+
+[node name="SignalListener" type="Node"]
+script = ExtResource("1_r5exb")

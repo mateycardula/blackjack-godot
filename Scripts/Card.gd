@@ -8,19 +8,23 @@ var flipped_texture : Texture
 var visible_texture : Texture
 
 var value : int
+var holder : Player
+func _ready():
+	holder = get_parent()
 
 func create(_texture : Texture, val : int):
 	visual = Sprite2D.new()
 	value = val
 	load_textures(_texture)
-	set_flipped(false)
 	add_child(visual)
 
-func set_flipped(d_flipped : bool):
-	if d_flipped == false:
-		visual.texture = visible_texture
-	else:
-		visual.texture = flipped_texture
+func set_face(face : face_enum.FACES):
+	match face:
+		face_enum.FACES.FRONT:
+			holder.add_score(self)
+			visual.texture = visible_texture
+		face_enum.FACES.BACK:
+			visual.texture = flipped_texture
 
 func load_textures(_texture : Texture):
 	visible_texture = _texture

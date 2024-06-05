@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvt837shbq8tf"]
+
+[ext_resource type="Script" path="res://Scripts/regular_player.gd" id="1_1o6cs"]
+[ext_resource type="FontFile" uid="uid://c72c1a465br4p" path="res://Assets/MotleyForcesRegular-w1rZ3.ttf" id="2_pfowm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odm1a"]
+bg_color = Color(0.488236, 0.807773, 0.268229, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_detail = 20
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxnoh"]
+bg_color = Color(0.584828, 0.328907, 0.0729544, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="RegularPlayer" type="Node2D" node_paths=PackedStringArray("input_buttons")]
+script = ExtResource("1_1o6cs")
+input_buttons = [NodePath("CanvasLayer/Hit"), NodePath("CanvasLayer/Stand")]
+
+[node name="Score" type="Label" parent="."]
+offset_left = -18.0
+offset_top = 78.0
+offset_right = 22.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("2_pfowm")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hit" type="Button" parent="CanvasLayer"]
+z_index = 2
+offset_left = 616.0
+offset_top = 584.0
+offset_right = 709.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("2_pfowm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_odm1a")
+action_mode = 0
+text = "HIT ME"
+
+[node name="Stand" type="Button" parent="CanvasLayer"]
+offset_left = 448.0
+offset_top = 584.0
+offset_right = 538.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("2_pfowm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_dxnoh")
+text = "STAND"
+
+[connection signal="pressed" from="CanvasLayer/Hit" to="." method="_on_hit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Stand" to="." method="_on_stand_pressed"]
