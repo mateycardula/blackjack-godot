@@ -9,10 +9,11 @@ func _ready():
 	pass
 
 func reveal():
+	await time_controller.wait_for(10)
 	cards.back().set_face(face_enum.FACES.FRONT)
 
 func start_turn():
-	reveal()
+	await reveal()
 	while card_sum < 17:
 		await time_controller.wait_for(10)
 		publish_signal.all_signals.HIT.emit(self)

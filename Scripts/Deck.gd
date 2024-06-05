@@ -7,17 +7,10 @@ var dealt_cards : Array[Card]
 func _ready():
 	listener = SignalListener.new()
 	add_child(listener)
-	
 	for card_resource in card_resources:
 		for i in 4:
 			create_card(card_resource, i)
 	
-	shuffle()
-	#deck_cards.shuffle()
-	#var card_node : Card
-	#card_node = deck_cards.pop_back()
-	#card_node.set_flipped(false)
-	#add_child(card_node)
 	
 func create_card(card_resource : CardResource, variation : int):
 	var new_card = Card.new()
@@ -37,12 +30,10 @@ func deal_to(object : Player, face : face_enum.FACES):
 	dealt_cards.append(card_to_deal)
 	
 func take_cards():
-	
 	for card in dealt_cards:
 		var new_card = Card.new()
 		new_card.create(card.visible_texture, card.value)
 		deck_cards.append(new_card)
 		card.queue_free()
-		
-	print(deck_cards.back())
+	shuffle()
 	dealt_cards.clear()

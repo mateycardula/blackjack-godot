@@ -21,8 +21,8 @@ func add_score(card : Card):
 	else:
 		card_sum+=card.value
 	
-	if(card_sum > 21):
-		publish_signal.all_signals.PLAYER_DREW_OVER_21.emit()
+	if(card_sum >= 21):
+		publish_signal.all_signals.PLAYER_DREW_OVER_21.emit(card_sum)
 	pass
 
 func lock_input(flag : bool):
