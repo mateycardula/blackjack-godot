@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d162k1qtx4ry1"]
+
+[ext_resource type="PackedScene" uid="uid://bfjybjinbi6ks" path="res://Scenes/deck.tscn" id="1_7rpwj"]
+[ext_resource type="Script" path="res://Scripts/table.gd" id="1_y5mtw"]
+[ext_resource type="PackedScene" uid="uid://dvt837shbq8tf" path="res://Scenes/player.tscn" id="2_bkbv2"]
+
+[node name="Table" type="Node2D" node_paths=PackedStringArray("table_deck", "player")]
+script = ExtResource("1_y5mtw")
+table_deck = NodePath("Deck")
+player = NodePath("Player")
+
+[node name="Deck" parent="." instance=ExtResource("1_7rpwj")]
+position = Vector2(560, 457)
+
+[node name="Player" parent="." instance=ExtResource("2_bkbv2")]
+position = Vector2(560, 459)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.362633, 0.581783, 0.339292, 1)

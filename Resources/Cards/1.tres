@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CardResource" load_steps=3 format=3 uid="uid://w0p0bdbj431o"]
+
+[ext_resource type="Script" path="res://Resources/CardResource.gd" id="1_3nilv"]
+[ext_resource type="SpriteFrames" uid="uid://dfeslxieyou65" path="res://Cards_Frames.tres" id="1_ysdth"]
+
+[resource]
+script = ExtResource("1_3nilv")
+graphics = ExtResource("1_ysdth")
+number = 1

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bak7kqd58k2pj"]
+
+[ext_resource type="Texture2D" uid="uid://bjm7psivjm041" path="res://Assets/Cards/CuteCards.png" id="1_p5pk6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gglh"]
+atlas = ExtResource("1_p5pk6")
+region = Rect2(200, 0, 100, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evx1i"]
+atlas = ExtResource("1_p5pk6")
+region = Rect2(200, 144, 100, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvr0m"]
+atlas = ExtResource("1_p5pk6")
+region = Rect2(200, 288, 100, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8iqd"]
+atlas = ExtResource("1_p5pk6")
+region = Rect2(200, 432, 100, 144)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gglh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evx1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvr0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8iqd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
